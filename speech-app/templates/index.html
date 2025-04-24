@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Recognition & Summarization</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Speech Recognition & Summarization</h1>
+            <p class="subtitle">Convert speech to text and generate meeting minutes</p>
+        </header>
+
+        <div class="mode-selector">
+            <label>
+                <input type="radio" name="mode" value="online" checked>
+                <span>Online Mode</span>
+            </label>
+            <label>
+                <input type="radio" name="mode" value="offline">
+                <span>Offline Mode</span>
+            </label>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn" class="btn start">
+                <i class="fas fa-microphone"></i> Start Recording
+            </button>
+            <button id="stopBtn" class="btn stop" disabled>
+                <i class="fas fa-stop"></i> Stop Recording
+            </button>
+            <button id="summarizeBtn" class="btn summarize" disabled>
+                <i class="fas fa-file-alt"></i> Generate Summary
+            </button>
+            <button id="exportBtn" class="btn export" disabled>
+                <i class="fas fa-file-pdf"></i> Export to PDF
+            </button>
+            <button id="resetBtn" class="btn reset">
+                <i class="fas fa-redo"></i> Reset
+            </button>
+        </div>
+
+        <div class="content-area">
+            <div class="text-box">
+                <h2>Recognized Text</h2>
+                <div id="recognizedText" class="text-content"></div>
+            </div>
+
+            <div class="text-box">
+                <h2>Minutes of Meeting</h2>
+                <div id="summaryText" class="text-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
